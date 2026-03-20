@@ -1,0 +1,35 @@
+[project]
+name = "cirrus"
+version = "1.0.0"
+description = "Automated Fleet Health & Self-Healing Platform for AWS EC2"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-v --tb=short"
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+strict = false
+disallow_untyped_defs = false
+
+[tool.flake8]
+max-line-length = 120
+extend-ignore = ["E501", "W503"]
+exclude = [".git", "__pycache__", "cdk.out", ".venv"]
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["tests/*", "infra/*"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true

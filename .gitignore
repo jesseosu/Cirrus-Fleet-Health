@@ -1,0 +1,17 @@
+node_modules/
+dist/
+cdk.out/
+coverage/
+.env
+.env.local
+*.js.map
+*.d.ts
+!jest.config.js
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.coverage
+cdk.out/
+*.egg-info/
+
